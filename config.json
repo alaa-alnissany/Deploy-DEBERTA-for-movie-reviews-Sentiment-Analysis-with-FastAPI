@@ -1,0 +1,8 @@
+{
+    "PRE_TRAINED_MODEL": "model_directory/",
+    "CLASS_NAMES": [
+        "negative",
+        "positive"
+    ],
+    "MAX_SEQUENCE_LEN": 512
+}

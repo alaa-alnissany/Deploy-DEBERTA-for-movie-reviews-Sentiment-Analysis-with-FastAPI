@@ -1,0 +1,3 @@
+conda activate fastapienv
+cd C:\Users\alaa\Desktop\SHAI Club\github\Deploy-BERT-for-Sentiment-Analysis-with-FastAPI
+uvicorn sentiment_analyzer.api:app

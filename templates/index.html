@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sentiment Analysis</h1>
+        <form id="sentimentForm">
+            <textarea id="reviewInput" rows="5" placeholder="Enter a movie review"></textarea>
+            <button type="button" id="submitButton">Predict</button>
+			<p><span>Confidence: </span> <span id='conf'></span></p>
+			<p><span>Sentiment: </span> <span id='sent'></span></p>
+        </form>
+        <div id="resultContainer" style="display: none;">
+            <h2>Result</h2>
+            <div id="reviewResult"></div>
+            <div id="sentimentResult"></div>
+            <div id="probabilityResult"></div>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			
+			$('#submitButton').on('click', function() {
+				$.ajax({
+					url: ' http://localhost:8000/predict?text=' + $('#reviewInput').val(),
+					method: 'GET',
+					type: 'json',					
+					crossDomain: true,
+					success: function(res) {
+						console.clear();
+						console.log(res);
+						$('#conf').html(`${res.confidence}`);						
+						$('#sent').html(`${res.sentiment}`);
+					},
+					error: function(e) {
+						console.log(e);
+						console.log(e);
+					}
+				
+				})
+				
+			})
+		
+		})
+	</script>
+	
+</body>
+</html>

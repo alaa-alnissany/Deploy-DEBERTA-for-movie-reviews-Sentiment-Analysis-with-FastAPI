@@ -1,0 +1,32 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Alaa</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/styles.css') }}">
+	<script src="action.js"></script>
+</head>
+<body>
+    <h3>Item ID: {{ id }}</h3>
+	<div class="container">
+		<from action="" method= "POST" name="f1" id="f1" class="from-horizontal" role = "from">
+			<label for="s1">subnet 1</label>
+			<input
+				type="text"
+				id="ip1"
+				name="ip1"
+				placeholder="adsasdasda"
+			>
+			<input
+				type= "submit"
+				name= "submit"
+				id= "btn_id"
+				value= "submit!"
+				onclick="SubmitVars(); this.disabled= true;"
+			>
+			<p id="answer">Answer </p>
+		</from>
+	</div>
+</body>
+</html>
