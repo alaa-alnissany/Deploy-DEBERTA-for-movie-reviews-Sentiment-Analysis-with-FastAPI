@@ -1,4 +1,4 @@
 #!/bin/bash
 
-http POST http://localhost:8000/predict-review text="This app is a total waste of time!"
+# http POST http://localhost:8000/predict-review text="This app is a total waste of time!"
 http GET http://localhost:8000/predict?text="This app is a total waste of time!"
